@@ -1,0 +1,15 @@
+<p>calendar-entries works!</p>
+
+
+<h2>Journal</h2>
+<ul class="entries">
+  <li *ngFor="let entry of entries"
+    [class.selected]="entry === selectedEntry"
+    (click)="onSelect(entry)" >
+
+    <span class="badge">{{entry.id}}</span> {{entry.content}}
+  </li>
+</ul>
+
+
+<app-daily-entry [entry]="selectedEntry"></app-daily-entry>

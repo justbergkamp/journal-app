@@ -1,3 +1,16 @@
-<p>daily-entry works!</p>
-{{hero}}
-<h1>{{dateNow | date: "EEEE, MMMM h"}}</h1>
+<!-- {{entryTitle}}
+<h4>{{entry.date | date: "EEEE, MMMM h"}}</h4>
+<div><span>id: </span>{{entry.id}}</div> -->
+
+<div *ngIf="entry">
+
+  <h2>{{entry.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{entry.id}}</div>
+  <div><span>date: </span>{{entry.date | date: "EEEE, MMMM h"}}</div>
+  <div>
+    <label>content:
+      <input [(ngModel)]="entry.content" placeholder="content"/>
+    </label>
+  </div>
+
+</div>
