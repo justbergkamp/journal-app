@@ -17,10 +17,10 @@ export class CalendarEntriesComponent implements OnInit {
   ngOnInit() {
     this.getEntries();
   }
-
   getEntries(): void {
-    this.entries = this.entryService.getEntries();
-  }
+  this.entryService.getEntries()
+      .subscribe(entries => this.entries = entries);
+    }
 
   selectedEntry: Entry;
   onSelect(entry: Entry): void {
