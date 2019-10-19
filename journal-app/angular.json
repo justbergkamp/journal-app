@@ -3,11 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mood-journal": {
+    "journal-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "less"
         }
       },
       "root": "",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mood-journal",
+            "outputPath": "dist/journal-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,7 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.less"
             ],
             "scripts": []
           },
@@ -67,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mood-journal:build"
+            "browserTarget": "journal-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mood-journal:build:production"
+              "browserTarget": "journal-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mood-journal:build"
+            "browserTarget": "journal-app:build"
           }
         },
         "test": {
@@ -93,7 +93,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.less"
             ],
             "scripts": []
           }
@@ -115,15 +115,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mood-journal:serve"
+            "devServerTarget": "journal-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mood-journal:serve:production"
+              "devServerTarget": "journal-app:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "mood-journal"
+  "defaultProject": "journal-app"
 }
