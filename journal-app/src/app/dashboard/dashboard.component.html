@@ -3,7 +3,8 @@
   <a *ngFor="let entry of entries" class="col-1-4"
       routerLink="/entry/{{entry.id}}">
     <div class="module entry">
-      <h4>{{entry.content}}</h4>
+      <h4>{{entry.date | date}}</h4>
     </div>
   </a>
+  <button mat-button (click)="goBack()" >Click me!</button>
 </div>

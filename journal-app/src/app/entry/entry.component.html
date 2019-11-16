@@ -1,10 +1,13 @@
 <div *ngIf="entry">
-  <h2>{{entry.date}} Date: </h2>
+  <h2>{{entry.date | date}} : </h2>
   <div><span>id: </span>{{entry.id}}</div>
   <div>
-    <label>content:
-    
+    <label>content: {{entry.content}}
+    </label>
+    <br/>
+    <label>name:
+        <input matInput [(ngModel)]="entry.content" placeholder="name"/>
     </label>
   </div>
-  <button (click)="goBack()">go back</button>
+  <button mat-button (click)="goBack()">go back</button>
 </div>
