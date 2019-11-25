@@ -18,8 +18,18 @@ export class DashboardComponent implements OnInit {
   }
 
   getEntries(): void {
-    this.entryService.getEntries()
+      this.entryService.getEntries()
        .subscribe(entries => this.entries = entries);
+  }
+
+  add(): void {
+    console.log("Test");
+    let date = new Date();
+    console.log(date);
+    this.entryService.addEntry({ date } as Entry)
+        .subscribe(entry => {
+          this.entries.push(entry);
+        });
 }
 
 }

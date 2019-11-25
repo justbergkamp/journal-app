@@ -14,6 +14,10 @@ export class EntryService {
     private http: HttpClient,
   ) { }
 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
   private entriesURL = 'api/entries';  // URL to web api
 
 
@@ -24,6 +28,14 @@ export class EntryService {
   getEntry(id: number): Observable<Entry> {
     const url = `${this.entriesURL}/${id}`;
     return this.http.get<Entry>(url)
+  }
+
+  updateEntry (entry: Entry): Observable<any> {
+    return this.http.put(this.entriesURL, entry, this.httpOptions)
+  }
+
+  addEntry (entry: Entry): Observable<Entry> {
+  return this.http.post<Entry>(this.entriesURL, entry, this.httpOptions)
   }
 
 

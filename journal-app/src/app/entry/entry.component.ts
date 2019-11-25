@@ -34,4 +34,9 @@ export class EntryComponent implements OnInit {
     this.location.back();
   }
 
+  save(): void {
+   this.entryService.updateEntry(this.entry)
+     .subscribe(() => this.goBack());
+   }
+
 }
