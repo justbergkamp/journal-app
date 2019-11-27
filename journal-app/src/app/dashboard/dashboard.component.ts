@@ -26,6 +26,7 @@ export class DashboardComponent implements OnInit {
     console.log("Test");
     let date = new Date();
     console.log(date);
+    //need to check that the
     this.entryService.addEntry({ date } as Entry)
         .subscribe(entry => {
           this.entries.push(entry);
